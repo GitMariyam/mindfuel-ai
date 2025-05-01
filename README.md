@@ -59,6 +59,27 @@ Future integration with serverless and AI
 Feel free to fork, clone, or contribute!
 
 
+🚀 Target Architecture Overview (AWS Free Tier-Friendly)
 
+🧠 Core Microservices (AI, Logger)
 
+Service        | AWS Option | Why it’s used                                | Free Tier?
+ai-service     | AWS Lambda | Stateless, lightweight — perfect for AI tips | ✅ Yes
+logger-service | AWS Lambda | Simple function to log to a DB or file       | ✅ Yes
 
+🌐 Routing & Access
+
+Component           | AWS Option         | Why it's used                             | Free Tier?
+API Gateway         | Amazon API Gateway | Route /fact to ai-service, /log to logger | ✅ Yes
+Frontend (optional) | S3 + CloudFront    | Host a static frontend if needed          | ✅ Yes
+
+🗃️ Data & Storage
+Purpose          | AWS Service  | Why it's used                               | Free Tier?
+Log storage      | DynamoDB     | Lightweight, scalable, and serverless NoSQL | ✅ Yes
+AI Model or Tips | S3 or inline | If needed, store prompts, facts, etc.       | ✅ Yes
+
+📦 DevOps / CI/CD (Later stage)
+
+Purpose            | AWS Option                         Why it's used                      | Free Tier?
+CI/CD              | GitHub Actions + AWS CLI         | Automate deploy to Lambda          | ✅ Yes
+Container Registry | ECR (Elastic Container Registry) | Store Docker images for Lambda/ECS | ✅ Yesreadme
