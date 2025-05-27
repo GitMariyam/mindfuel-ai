@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: MindFuel AI Service as a Lambda container
+Resources:
+  MindFuelAIService:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Architectures:
+      - x86_64
+      ImageUri: mindfuel-ai:latest
+      Events:
+        WebEndpoint:
+          Type: Api
+          Properties:
+            Path: /fact
+            Method: GET

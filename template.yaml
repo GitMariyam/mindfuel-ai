@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: MindFuel AI FastAPI Lambda Function
+
+Resources:
+  MindFuelAIService:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: mindfuelTip
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      CodeUri: ai_service/
+      Events:
+        WebEndpoint:
+          Type: Api
+          Properties:
+            Path: /fact
+            Method: get
+
