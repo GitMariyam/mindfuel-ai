@@ -1,20 +1,18 @@
-# Use official Python base image
+# Use official Python image as base
 FROM python:3.11-slim
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy only requirements first for caching dependencies
-COPY logger_service/requirements.txt .
-
-# Install Python dependencies
+# Copy requirements and install
+COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Copy the rest of the service code
-COPY logger_service/ .
+# Copy all remaining code
+COPY . .
 
-# Expose FastAPI default port
+# Expose port
 EXPOSE 8001
 
-# Start FastAPI server with Uvicorn
+# Run the app
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8001"]
