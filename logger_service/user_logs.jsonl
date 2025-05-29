@@ -1,3 +1,5 @@
 {"event": "fact_served", "tip": "Placeholder tip", "timestamp": "2025-05-19T10:00:00Z", "logged_at": "2025-05-21T03:49:14.182770"}
 {"event": "fact_served", "tip": "Placeholder tip", "timestamp": "2025-05-19T10:00:00Z", "logged_at": "2025-05-21T03:50:37.727585"}
 {"user_id": "abc123", "action": "clicked_tip", "timestamp": "2024-05-20T12:00:00Z", "logged_at": "2025-05-27T22:06:57.035638"}
+{"user_id": "abc123", "action": "clicked_tip", "timestamp": "2024-05-20T12:00:00Z", "logged_at": "2025-05-29T21:08:28.937798"}
+{"user_id": "abc123", "action": "clicked_tip", "timestamp": "2024-05-20T12:00:00Z", "logged_at": "2025-05-29T21:14:22.434630"}

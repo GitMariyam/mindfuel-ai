@@ -1,4 +1,4 @@
 fastapi
 mangum
-
-
+httpx
+uvicorn[standard]
